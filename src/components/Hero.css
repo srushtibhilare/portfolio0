@@ -1,0 +1,183 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+/* Root Style */
+.hero-modern {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 3rem;
+  background: linear-gradient(120deg, #150363, #271d58);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+  flex-wrap: wrap;
+  font-family: 'Caprasimo', serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glass blur overlay */
+.hero-modern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+/* Left Text */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  color: #fff;
+  z-index: 1;
+  animation: slideFadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+.hero-text h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #f1f5f9;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-text h4 {
+  font-size: 1.5rem;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Social Icons */
+.hero-text-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-text-icons a {
+  color: #d1d5db;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-text-icons a:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+
+/* Play Button */
+.play-button {
+  width: 64px;
+  height: 64px;
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #60a5fa;
+  color: #60a5fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  background: #60a5fa;
+  color: #fff;
+}
+
+/* Image Section */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeZoomIn 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.hero-image img {
+  width: clamp(300px, 35vw, 500px);
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05) rotateY(3deg);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation Keyframes */
+@keyframes slideFadeIn {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    transform: scale(0.95) rotateY(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-modern {
+    flex-direction: column-reverse;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-text-icons {
+    justify-content: center;
+  }
+
+  .play-button {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+.about-section {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #334155);
+  background-size: 300% 300%;
+  animation: gradientMove 20s ease infinite;
+  font-family: 'Caprasimo', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-content-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Shared info box */
+.info-box {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  animation: popIn 1.5s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.skills-box {
+  animation-delay: 0.2s;
+}
+
+.experience-box {
+  animation-delay: 0.5s;
+}
+
+/* Title */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #e0f2fe;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: fadeInDown 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Description text */
+.section-content {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  text-align: justify;
+  animation: fadeInUp 1.3s ease-out forwards;
+  opacity: 0;
+  margin-top: 1rem;
+}
+
+/* Icons */
+.section-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.section-icons i,
+.section-icons svg {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.section-icons i:hover,
+.section-icons svg:hover {
+  transform: scale(1.2);
+  color: #0ea5e9;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-content {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .section-icons {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,188 @@
+/* App.css – Full Page Responsive Layout */
+
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background: #f9fafb;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Layout base */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Section styling */
+section {
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+/* Headings and text */
+h1, h2, h3 {
+  color: #1e3a8a;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #475569;
+}
+
+/* Buttons */
+.btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 97, 255, 0.2);
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card design */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Form layout */
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+}
+
+button[type='submit'] {
+  align-self: flex-start;
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ========== 📱 Responsive Media Queries ========== */
+
+/* Small tablets and phones */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 0 1rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium laptops */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+  }
+
+  .btn {
+    font-size: 1.05rem;
+  }
+}
